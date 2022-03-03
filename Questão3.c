@@ -1,31 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <time.h>
 
 int main(){
-    int idade = 1, idade_21 = 0, idade_60 = 0, mediaidade = 0, somaidade = 0;
 
-    printf("\n\tBemvindo ao programa!\n");
-    printf("informe -1 para parar programa");
+    int vet[12];
+    int i, x;
 
-    while(idade > 0){
-        printf("\nEntre com a idade de varias pessoas: ");
-        scanf("%d", &idade);
+    srand(time(NULL)); 
 
-        if(idade > 21){
-            idade_21 = idade_21 + 1;
-        }
-
-        if(idade > 60){
-            idade_60 = idade_60 + 1;
-            somaidade += idade;
-        }
-
+    for(i = 0; i < 12 ; i++){           //Formando 12 jogadas do dado
+        vet[i] = 1 + rand() % 6;
     }
-    mediaidade = somaidade/idade_60;
 
-    printf("\nQuantidade de pessoas acima de 21 anos e igual a %d ", idade_21);
-    printf("\nQuantidade de pessoas acima de 60 anos e igual a %d ", idade_60);
-    printf("\nMedia de idade das pessoas com mais de 60 e igual a %d ", mediaidade);
-    printf("\nMOSTRAR%d ", somaidade);
+    for(i = 0; i < 12; i++){            //Resultado armazenado em um vetor 
+        printf("%d ",vet[i]);
+    }
+
+    for (i = 0; i < 12; i++) {          //Mostrando quantas vezes o dado parou na mesma posição
+        for (x = i + 1; x < 12; x++){
+            if (vet[i] == vet[x]){
+                printf("\nValor repetido %i Nas jogadas %i e %i", vet[i], i + 1 , x + 1);
+                for (x = x + 1; x < 12; x++) {
+                    if (vet[i] == vet[x]) {
+                        printf(" e %i", x + 1);
+
+                    }
+                }
+            }
+        }
+    }
+
     return(0);
 }

@@ -1,19 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(){
-    int numero = 1, i;
+main () {
 
-    while(numero > 0){
-        printf("\nEntre com um numero para saber seus divisores ou escreva -1 para sair:");
-        scanf("%d",&numero);
-        
-        for(i=1; i<=numero; i++){  
-            if (numero %  i == 0){
-            printf("%d ", i);
-            }
-        }
+    int num[20] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int i, aux;
+
+    for( i = 0; i < 10; i++){ //Trocando os elementos 
+        aux = num[i];
+        num[i]= num[19-i];
+        num[19-i] = aux;
     }
+    
+    for(i = 0; i < 20; i++) //Mostrando o vetor invertido
+    printf("%d  ", num[i]);
 
     return(0);
 }

@@ -1,20 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 
 int main(){
-    int num1, num2, quociente = 0, resto = 1;
-    printf("\nDigite o primeiro numero: ");
-    scanf("%d",&num1);
-    printf("\nDigite o primeiro numero: ");
-    scanf("%d",&num2);
 
-    resto = num1 % num2;
+    int vet[10] = {2,3,6,12,7,5,9,12,4,8};
+    int i, x;
+    int maior = 0;
 
-    while(num1 > resto){
-        num1 = num1 - num2;
-        quociente =quociente + 1;
+
+    for(i = 0 ; i < 10 ; i++){
+        printf("%d ",vet[i]);
     }
-    printf("\nValor do quociente: %d ",quociente);
-    printf("\nValor do resto: %d ",resto);
+
+    for (i = 0 ; i < 10; i++) { //Achando maior numero do vetor 
+        if (vet[i] > maior){
+            maior  = vet[i];
+        }
+    }
+
+    printf("\nMaior valor: %i", maior);
+
+    for (i = 0; i < 10; i++) {           //Valores repetidos
+        for (x = i + 1; x < 10; x++){
+            if (vet[i] == vet[x]){
+                printf("\nValor repetido %i - Na posicao %i e %i", vet[i], i + 1 , x + 1 );
+                
+            }
+        }
+    }
+
     return(0);
 }

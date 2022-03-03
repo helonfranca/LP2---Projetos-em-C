@@ -1,63 +1,45 @@
 #include <stdio.h>
-#include <stdlib.h>
-//5)Leia um conjunto de números inteiros, até que um número negativo seja
-//digitado. Ao final, calcule e imprima:
-//a) A quantidade de números válidos lida
-//b) O percentual de números pares
-//c) A média dos números ímpares
-//d) O maior e o menor número lido
 
 int main(){
+    int Matriz[4][5] = {{3,6,9,2,7},{8,2,4,6,1},{7,6,4,2,2},{1,6,5,2,3}};
+    int soma[4][5];
+    int i,j;
     
-    int maior = 0, menor = 0, i = 0;
-    int num = 1, quantidadenum = 0, par = 0, impar = 0, porcentualPares = 0, mediaimpares = 0, quantidadepares = 0, quantidadeimpares = 0, somaimpares = 0;
-    printf("\n\tBem vindo ao programa!\n");
+    printf("Valores reais da Matriz:\n\n");
 
-    while( num > 0){
-        printf("\nLeia um conjunto de numeros inteiros, ate que um numero negativo seja digitado: ");
-        scanf("%d", &num);
+    for(i = 0 ; i < 4 ; i++){       //Mostrando a Matriz
+        for(j = 0 ; j < 5 ; j++){
+            printf("%4d ", Matriz[i][j]);
+        }
+        printf("\n");
+    }
 
-        if(num > 0){
-            quantidadenum = quantidadenum + 1;
+    printf("\nO dobro da Matriz:\n\n");   //Mostrando o dobro da Matriz
 
-            if(i == 0){
-                maior = num;
-                menor = num;
-                i++;
-            }
+    for(i = 0 ; i < 4 ; i++){
+        for(j = 0 ; j < 5 ; j++){
+            printf("%4d ", Matriz[i][j] * 2);
+        }
+        printf("\n");
+    }
 
-            if(num>maior){
-                maior = num;
-            }
+    printf("\n");
 
-            if(num<menor){
-                menor = num;
-            }
-    
-            if(num % 2 == 0){
-                par++;
-                quantidadepares = quantidadepares + 1;
-            }
-
-            else {
-                impar++;
-                quantidadeimpares = quantidadeimpares + 1;
-                somaimpares = somaimpares + num;
-            }   
-        }   
+    for(i = 0 ; i < 4 ; i++){      //Soma da matriz base com a Matriz dobro
+        for(j = 0 ; j < 5 ; j++){
+            soma[i][j] = Matriz[i][j] + (Matriz[i][j] * 2);
+        }
         
     }
-    
-    porcentualPares = (par * 100.0) / quantidadenum;
-    mediaimpares = somaimpares / quantidadeimpares;
 
+    printf("Resultado da Matriz base somada com a matriz dobro:\n\n");
 
-    printf("\nMostrar quantidade de numeros: %d ", quantidadenum);
-    printf("\nMostrar porcentual de numeros pares: %d ", porcentualPares);
-    printf("\nMostrar media de numeros impares: %d ", mediaimpares); // nessa parte eu fiz alguma coisa errada, só não encontrei o erro!
-    printf("\nMostrar quantidade de numeros pares: %d ", quantidadepares);
-    printf("\nMaior numero: %i",maior);
-    printf("\nMenor numero: %i",menor);
+    for(i = 0 ; i < 4 ; i++){
+        for(j = 0 ; j < 5 ; j++){
+            printf("%4d ", soma[i][j]);
+        }
+        printf("\n");
+    }
     
     return(0);
-    }
+}
