@@ -1,29 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void){
-    int maior=0, menor=0, guardaN=0, i=0, quantidadeN = 0;
-    while(1){
-        printf("\n Digite um numero: ");
-        scanf("%i",&guardaN);
-        if(i==0){
-            maior = guardaN;
-            menor = guardaN;
-            i++;
-        } 
-        else if(guardaN==999){
-            break;
-        }  
-        else if(guardaN>maior){
-            maior = guardaN;
-        }
-        else if(guardaN<menor){
-            menor = guardaN;
+int main(){
+    int numero = 1, i;
+
+    while(numero > 0){
+        printf("\nEntre com um numero para saber seus divisores ou escreva -1 para sair:");
+        scanf("%d",&numero);
+        
+        for(i=1; i<=numero; i++){  
+            if (numero %  i == 0){
+            printf("%d ", i);
+            }
         }
     }
-    
-    printf("\nMaior numero: %i",maior);
-    printf("\nMenor numero: %i",menor);
-    printf("\nSoma doa numeros: %i",quantidadeN);
-    return 0;
-}
 
+    return(0);
+}
