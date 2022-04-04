@@ -1,1 +1,1 @@
-# LP2-Projetos-em-C
+# LP2-Projetos
