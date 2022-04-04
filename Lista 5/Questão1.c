@@ -52,13 +52,11 @@ main(void){
 
     maiusculas(str1);
     printf("Frase em maiusculo: ");
-    printf("%s",str1);
+    
 
     printf("\n");
 
-    compara(str1,str2);
-    printf("comparação de strings: ");
-    printf("%d",compara);
+    
 
 
 

@@ -19,7 +19,7 @@ void zeraPares(int * vet1){      //função para zerar numeros pares
         if(vet1[i] % 2 == 0){
             vet1[i] = 0;
         }
-        else{
+        else {
             vet1[i] = vet1[i];
         }
     }
@@ -90,7 +90,7 @@ int main(void){
 
     soma(vet1, vet2);
 
-    printf("Soma dos vetores: ");         //soamndo vetores
+    printf("Soma dos vetores: ");         //somando vetores
     for(i = 0; i < 30; i++){
         printf("%d ", vet1[i]);
     }
