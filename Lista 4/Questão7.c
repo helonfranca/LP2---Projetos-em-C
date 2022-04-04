@@ -11,13 +11,13 @@
 main (){
 
     char texto[] = {" "};
-    int i;
+    
 
-    scanf("%s",&texto);
+    gets();
 
-    for(i = 0 ; i <  ; i++){
-        printf("%s ",texto);
-    }
+    
+    printf("%s ",texto);
+ 
 
     return(0);
 }
