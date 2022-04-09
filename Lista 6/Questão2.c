@@ -147,7 +147,7 @@ void listaraluno(disciplina *dis){
 
 void calcularcrmedio(disciplina *dis){
     int i;
-    float crm;
+    float crm = 0.0;
     int contador = 0;
 
     for(i = 0; i < 40; i++){
@@ -215,7 +215,7 @@ int main(){
 
     while(op != 8){
         fflush(stdin); 
-        system("cls || clear"); //Limpa o prompt
+        system("cls || clear"); 
 
         switch(op){
         case 1:
@@ -254,7 +254,7 @@ int main(){
             break;
 
         default:
-            puts("Opção Inválida");
+            puts("Opcao Invalida");
             break;   
         }
 
